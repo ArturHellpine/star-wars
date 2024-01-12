@@ -1,0 +1,13 @@
+.containter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-style: italic;
+}
