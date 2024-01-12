@@ -47,6 +47,7 @@ const Characters = () => {
                     ]}
                 />
             </div>
+            <Button onClick={() => {setSearchQuery(''); setSelectedGender('')}}>Reset to default</Button>
             {searchedCharacters?.map((character, index) =>
                 <Card
                     key={index}

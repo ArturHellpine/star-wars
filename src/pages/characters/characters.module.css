@@ -7,7 +7,7 @@
 
 .card {
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 25px 0;
     font-size: 18px;
     font-style: italic;
 }
