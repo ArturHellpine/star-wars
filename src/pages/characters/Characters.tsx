@@ -25,11 +25,15 @@ const Characters = () => {
         return selectedCharacters?.filter(character => character.name.toLocaleLowerCase().trim().includes(searchQuery.toLocaleLowerCase().trim()))
     }, [searchQuery, characters?.results, selectedGender])
 
+    const resetToDefault = () => {
+        setSelectedGender('')
+        setSearchQuery('')
+    }
 
     return (
         <Layout>
             {!characters && <Loader />}
-            <div className={classes.containter}>
+            <div className={classes.container}>
                 <Input
                     style={{ width: 200 }}
                     placeholder='Search..'
@@ -38,7 +42,7 @@ const Characters = () => {
                 />
                 <Select
                     onSelect={(value) => setSelectedGender(value)}
-                    defaultValue="Sort by gender"
+                    placeholder='Sort by gender'
                     style={{ width: 150 }}
                     options={[
                         { value: 'male', label: 'Male' },
@@ -47,7 +51,7 @@ const Characters = () => {
                     ]}
                 />
             </div>
-            <Button onClick={() => {setSearchQuery(''); setSelectedGender('')}}>Reset to default</Button>
+            <Button onClick={resetToDefault}>Reset to default</Button>
             {searchedCharacters?.map((character, index) =>
                 <Card
                     key={index}
